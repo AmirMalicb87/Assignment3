@@ -2,12 +2,14 @@ public class JavaProgram {
 
     public static void main(String[] args) {
 
-        String users = "John|Davidson|Belgrade*Michael|Barton|Krakow*Ivan|Perkinson|Moscow";
+        String users = "John.Davidson/Belgrade Michael.Barton/Krakow Ivan.Perkinson/Moscow";
 
         Person[] persons = new Person[3];
         int personsCounter = 0;
 
-        String[] usersData = users.split("[|*]");
+        String modifiedText = users.replace(".", " ").replace("/", " ");
+
+        String[] usersData = modifiedText.split(" ");
 
         for (int i = 0; i < usersData.length; i += 3) {
 
